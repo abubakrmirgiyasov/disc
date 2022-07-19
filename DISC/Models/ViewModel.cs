@@ -1,10 +1,12 @@
-﻿namespace DISC.Models;
+﻿using DISC.Models.Parts;
+
+namespace DISC.Models;
 
 public class ViewModel
 {
     public Users User { get; set; }
 
-    public IEnumerable<FirstPartQuiz> FirstPartQuiz { get; set; }
+    public PaginatedList<FirstQuiz> FirstPart { get; set; }
 
-    public PaginatedList<FirstPartQuiz> FirstPartPagination { get; set; }
+    public PaginatedList<SecondQuiz> SecondPart { get; set; }
 }

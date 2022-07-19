@@ -1,4 +1,5 @@
 ﻿using DISC.Models;
+using DISC.Models.Parts;
 using Microsoft.EntityFrameworkCore;
 
 namespace DISC.Controllers.Logics;
@@ -25,19 +26,20 @@ public class DbRequests : IDbRequests
         return user;
     }
 
-    public List<FirstPartQuiz> GetQuizzes()
+    public List<FirstQuiz> GetQuizzes()
     {
         var quiz = _context.FirstPartQuizzes.ToList();
         return quiz;
     }
 
-    public async Task<PaginatedList<FirstPartQuiz>> Pagination(int? pageNumber)
+    public async Task<PaginatedList<T>> Pagination<T>(int? pageNumber, DbSet<T> list) 
+        where T : class
     {
-        var quizzes = from q in _context.FirstPartQuizzes
+        var quizzes = from q in list
                       select q;
 
         int pageSize = 1;
 
-        return await PaginatedList<FirstPartQuiz>.CreateAsync(quizzes.AsNoTracking(), pageNumber ?? 1, pageSize);
+        return await PaginatedList<T>.CreateAsync(quizzes.AsNoTracking(), pageNumber ?? 1, pageSize);
     }
 }

@@ -19,16 +19,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGljdGlvbmFyeVxEaWN0aW9uYXJ5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Works/DISC/DISC/Views/FirstPart/Quiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmlyc3RQYXJ0XFF1aXouY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Works/DISC/DISC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Works/DISC/DISC/Views/Parts/First.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcRmlyc3QuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Works/DISC/DISC/Views/Parts/Second.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydHNcU2Vjb25kLmNzaHRtbA==
+[D:/Works/DISC/DISC/Views/SecondPart/Quiz.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2Vjb25kUGFydFxRdWl6LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Works/DISC/DISC/Views/Shared/Error.cshtml]

@@ -23,7 +23,7 @@ public class HomeController : Controller
     public async Task<IActionResult> Index(Users user)
     {
         var id = await _requests.CreateUser(user);
-        return Redirect($"/Parts/First/{id}");
+        return Redirect($"/FirstPart/Quiz/{id}");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
