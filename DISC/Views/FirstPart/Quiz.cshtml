@@ -1,0 +1,100 @@
+﻿@model ViewModel
+
+@{
+    ViewData["Title"] = "Часть 1";
+}
+
+<div class="container">
+    <h3>@Model.User.FirstName @Model.User.SecondName @Model.User.LastName</h3>
+    <br />
+    <br />
+    <h4>Из предложенных вариантов выберете два:</h4>
+    <ul>
+        <li><h5>наиболее вам подходящее (Максимум)</h5></li>
+        <li><h5>наиболее вам подходящее (Минимум)</h5></li>
+    </ul>
+
+    @{
+        int quizzesAmmount = Model.FirstPart.TotalPages;
+        string nextPage = !Model.FirstPart.HasNextPage ? "disabled" : "";
+    }
+
+    @foreach (var item in Model.FirstPart)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Вопрос @item.Id (@quizzesAmmount) </th>
+                    <th scope="col">Минимум</th>
+                    <th scope="col">Максимум</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">@item.QuizFirst</th>
+                    <td>
+                        <input type="radio" name="min" required>
+                        <label >1</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="max" required>
+                        <label>1</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">@item.QuizSecond</th>
+                    <td>
+                        <input type="radio" name="min" required>
+                        <label>2</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="max" value="1" required>
+                        <label>2</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">@item.QuizThird</th>
+                    <td>
+                        <input type="radio" name="min" required>
+                        <label>3</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="max" value="1" required>
+                        <label>3</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">@item.QuizFourth</th>
+                    <td>
+                        <input type="radio" name="min" required>
+                        <label>4</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="max" value="1" required>
+                        <label>4</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    @{
+        if (Model.FirstPart.HasNextPage)
+        {
+            <a 
+                asp-area="" 
+                asp-controller="FirstPart" 
+                asp-action="Quiz" 
+                asp-route-page="@(Model.FirstPart.PageIndex + 1)"
+                class="btn btn-outline-danger @nextPage">Далее</a>
+        }
+        else
+        {
+            <a 
+                asp-area="" 
+                asp-controller="SecondPart" 
+                asp-action="Quiz"
+                asp-route-id="@Model.User.Id"
+                class="btn btn-outline-danger">2 Часть</a>
+        }
+    }
+</div>
