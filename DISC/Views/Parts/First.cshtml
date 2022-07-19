@@ -78,10 +78,23 @@
             </tbody>
         </table>
     }
-    <a onclick="@(i++)"
-        asp-area="" 
-        asp-controller="Parts" 
-        asp-action="First" 
-        asp-route-page="@(Model.FirstPartPagination.PageIndex + 1)"
-        class="btn btn-outline-danger @nextPage">Далее</a> 
+    @{
+        if (Model.FirstPartPagination.HasNextPage)
+        {
+            <a 
+                asp-area="" 
+                asp-controller="Parts" 
+                asp-action="First" 
+                asp-route-page="@(Model.FirstPartPagination.PageIndex + 1)"
+                class="btn btn-outline-danger @nextPage">Далее</a>
+        }
+        else
+        {
+            <a 
+                asp-area="" 
+                asp-controller="Parts" 
+                asp-action="Second"
+                class="btn btn-outline-danger">2 Часть</a>
+        }
+    }
 </div>
