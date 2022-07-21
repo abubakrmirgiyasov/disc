@@ -25,8 +25,6 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <input asp-for="FirstPartAnswers.QuistionNum" value="@item.Id" hidden></input>
-                        <input asp-for="FirstPartAnswers.UserId" value="@Model.User.Id" hidden></input>
                         <th scope="col">Вопрос @item.Id (@quizzesAmmount) </th>
                         <th scope="col">Минимум</th>
                         <th scope="col">Максимум</th>
@@ -36,44 +34,44 @@
                     <tr>
                         <th scope="row">@item.QuizFirst</th>
                         <td>
-                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="1"required>
+                            <input type="radio" name="min" value="1"required>
                             <label >1</label>
                         </td>
                         <td>
-                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="1" required>
+                            <input type="radio" name="max" value="1" required>
                             <label>1</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuizSecond</th>
                         <td>
-                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="2" required>
+                            <input type="radio" name="min" value="2" required>
                             <label>2</label>
                         </td>
                         <td>
-                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="2" required>
+                            <input type="radio" name="max" value="2" required>
                             <label>2</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuizThird</th>
                         <td>
-                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="3" required>
+                            <input type="radio" name="min" value="3" required>
                             <label>3</label>
                         </td>
                         <td>
-                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="3" required>
+                            <input type="radio" name="max" value="3" required>
                             <label>3</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuizFourth</th>
                         <td>
-                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="4" required>
+                            <input type="radio" name="min" value="4" required>
                             <label>4</label>
                         </td>
                         <td>
-                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="4" required>
+                            <input type="radio" name="max" value="4" required>
                             <label>4</label>
                         </td>
                     </tr>
