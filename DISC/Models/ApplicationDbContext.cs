@@ -11,6 +11,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<SecondQuiz> SecondPartQuizzes { get; set; } = null!;
 
+    public DbSet<FirstAnswer> FirstPartAnswers { get; set; } = null!;
+
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options) { }
 }

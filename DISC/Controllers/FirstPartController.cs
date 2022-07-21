@@ -1,5 +1,6 @@
 ﻿using DISC.Controllers.Logics;
 using DISC.Models;
+using DISC.Models.Parts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DISC.Controllers;

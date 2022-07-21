@@ -21,80 +21,74 @@
 
     @foreach (var item in Model.FirstPart)
     {
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Вопрос @item.Id (@quizzesAmmount) </th>
-                    <th scope="col">Минимум</th>
-                    <th scope="col">Максимум</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">@item.QuizFirst</th>
-                    <td>
-                        <input type="radio" name="min" required>
-                        <label >1</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="max" required>
-                        <label>1</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">@item.QuizSecond</th>
-                    <td>
-                        <input type="radio" name="min" required>
-                        <label>2</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="max" value="1" required>
-                        <label>2</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">@item.QuizThird</th>
-                    <td>
-                        <input type="radio" name="min" required>
-                        <label>3</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="max" value="1" required>
-                        <label>3</label>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">@item.QuizFourth</th>
-                    <td>
-                        <input type="radio" name="min" required>
-                        <label>4</label>
-                    </td>
-                    <td>
-                        <input type="radio" name="max" value="1" required>
-                        <label>4</label>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <form>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <input asp-for="FirstPartAnswers.QuistionNum" value="@item.Id" hidden></input>
+                        <input asp-for="FirstPartAnswers.UserId" value="@Model.User.Id" hidden></input>
+                        <th scope="col">Вопрос @item.Id (@quizzesAmmount) </th>
+                        <th scope="col">Минимум</th>
+                        <th scope="col">Максимум</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">@item.QuizFirst</th>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="1"required>
+                            <label >1</label>
+                        </td>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="1" required>
+                            <label>1</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@item.QuizSecond</th>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="2" required>
+                            <label>2</label>
+                        </td>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="2" required>
+                            <label>2</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@item.QuizThird</th>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="3" required>
+                            <label>3</label>
+                        </td>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="3" required>
+                            <label>3</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">@item.QuizFourth</th>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Minimum" type="radio" name="min" value="4" required>
+                            <label>4</label>
+                        </td>
+                        <td>
+                            <input asp-for="FirstPartAnswers.Maximum" type="radio" name="max" value="4" required>
+                            <label>4</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     }
     @{
         if (Model.FirstPart.HasNextPage)
         {
-            <a 
-                asp-area="" 
-                asp-controller="FirstPart" 
-                asp-action="Quiz" 
-                asp-route-page="@(Model.FirstPart.PageIndex + 1)"
-                class="btn btn-outline-danger @nextPage">Далее</a>
+            <a asp-area="" asp-controller="FirstPart" asp-action="Quiz" asp-route-page="@(Model.FirstPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage">Далее</a>
         }
         else
         {
-            <a 
-                asp-area="" 
-                asp-controller="SecondPart" 
-                asp-action="Quiz"
-                asp-route-id="@Model.User.Id"
-                class="btn btn-outline-danger">2 Часть</a>
+            <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-id="@Model.User.Id" class="btn btn-outline-danger">2 Часть</a>
         }
     }
 </div>

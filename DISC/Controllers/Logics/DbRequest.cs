@@ -42,4 +42,11 @@ public class DbRequests : IDbRequests
 
         return await PaginatedList<T>.CreateAsync(quizzes.AsNoTracking(), pageNumber ?? 1, pageSize);
     }
+
+    public FirstAnswer AddAnswer(FirstAnswer answer)
+    {
+        _context.Add(answer);
+        _context.SaveChanges();
+        return answer;
+    }
 }

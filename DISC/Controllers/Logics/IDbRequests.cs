@@ -11,6 +11,8 @@ public interface IDbRequests
     Task<Guid> CreateUser(Users user);
 
     List<FirstQuiz> GetQuizzes();
+    
+    FirstAnswer AddAnswer(FirstAnswer answer);
 
     Task<PaginatedList<T>> Pagination<T>(int? pageNumber, DbSet<T> list) where T : class;
 }
