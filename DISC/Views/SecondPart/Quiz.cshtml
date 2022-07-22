@@ -33,105 +33,105 @@
                     <tr>
                         <th scope="row">@item.QuestionFirst</th>
                         <td>
-                            <input type="radio" name="a1" id="a22" required>
+                            <input type="radio" name="a1" id="a22" value="Согласен" required>
                             <label for="a22">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a1" id="a23" required>
+                            <input type="radio" name="a1" id="a23" value="Не согласен" required>
                             <label for="a23">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a1" id="a24" required>
+                            <input type="radio" name="a1" id="a24" value="Не знаю" required>
                             <label for="a24">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionSecond</th>
                         <td>
-                            <input type="radio" name="a2" id="a25" required>
+                            <input type="radio" name="a2" id="a25" value="Согласен" required>
                             <label for="a25">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a2" id="a26" required>
+                            <input type="radio" name="a2" id="a26" value="Не согласен" required>
                             <label for="a26">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a2" id="a27" required>
+                            <input type="radio" name="a2" id="a27" value="Не знаю" required>
                             <label for="a27">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionThird</th>
                         <td>
-                            <input type="radio" name="a3" id="a19" required>
+                            <input type="radio" name="a3" id="a19" value="Согласен" required>
                             <label for="a19">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a3" id="a20" required>
+                            <input type="radio" name="a3" id="a20" value="Не согласен" required>
                             <label for="a20">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a3" id="a21" required>
+                            <input type="radio" name="a3" id="a21" value="Не знаю" required>
                             <label for="a21">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionFourth</th>
                         <td>
-                            <input type="radio" name="a4" id="a16" required>
+                            <input type="radio" name="a4" id="a16" value="Согласен" required>
                             <label for="a16">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a4" id="a17" required>
+                            <input type="radio" name="a4" id="a17" value="Не согласен" required>
                             <label for="a17">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a4" id="a18" required>
+                            <input type="radio" name="a4" id="a18" value="Не знаю" required>
                             <label for="a18">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionFifth</th>
                         <td>
-                            <input type="radio" name="a5" id="a13" required>
+                            <input type="radio" name="a5" id="a13" value="Согласен" required>
                             <label for="a13">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a5" id="a14" required>
+                            <input type="radio" name="a5" id="a14" value="Не согласен" required>
                             <label for="a14">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a5" id="a15" required>
+                            <input type="radio" name="a5" id="a15" value="Не знаю" required>
                             <label for="a15">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionSixth</th>
                         <td>
-                            <input type="radio" name="a6" id="a10" required>
+                            <input type="radio" name="a6" id="a10" value="Согласен" required>
                             <label for="a10">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a6" id="a11" required>
+                            <input type="radio" name="a6" id="a11" value="Не согласен" required>
                             <label for="a11">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a6" id="a12" required>
+                            <input type="radio" name="a6" id="a12" value="Не знаю" required>
                             <label for="a12">Не знаю</label>
                         </td>
                     </tr>
                     <tr>
                         <th scope="row">@item.QuestionSeventh</th>
                         <td>
-                            <input type="radio" name="a7" id="a7" required>
+                            <input type="radio" name="a7" id="a7" value="Согласен" required>
                             <label for="a7">Согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a7" id="a8" required>
+                            <input type="radio" name="a7" id="a8" value="Не согласен" required>
                             <label for="a8">Не согласен</label>
                         </td>
                         <td>
-                            <input type="radio" name="a7" id="a9" required>
+                            <input type="radio" name="a7" id="a9" value="Не знаю" required>
                             <label for="a9">Не знаю</label>
                         </td>
                     </tr>
@@ -142,20 +142,42 @@
     @{
         if (Model.SecondPart.HasNextPage)
         {
-            <a 
-                asp-area="" 
-                asp-controller="SecondPart" 
-                asp-action="Quiz" 
-                asp-route-page="@(Model.SecondPart.PageIndex + 1)"
-                class="btn btn-outline-danger @nextPage">Далее</a>
+                                        <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-page="@(Model.SecondPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage" id="next">Далее</a>
         }
         else
         {
-            <a asp-area="" 
-                asp-controller="" 
-                asp-action=""
-                asp-route-id="@Model.User.Id"
-                class="btn btn-outline-danger">Составить отчет</a>
+                                        <a asp-area="" asp-controller="Report" asp-action="Compose" class="btn btn-success">Составить отчет</a>
         }
     }
+    <p class="text-danger output"></p>
 </div>
+<script>
+const output = document.querySelector(".output");
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const btn = document.querySelector("#next");
+btn.addEventListener("click", (e) => { 
+    e.preventDefault();
+    let agree;
+    let disagree;
+    let dontKnow;
+    for (const m of radioButtons) {
+        if (m.checked && m.value === "Согласен") {
+            agree = m.value;
+            break;
+        }
+        if (m.checked && m.value === "Не согласен") {
+            disagree = m.value;
+            break;
+        }
+        if (m.checked && m.value === "Не знаю") {
+            dontKnow = m.value;
+        }
+    }
+
+    //if (agree === disagree === dontKnow) {
+    //    e.preventDefault();
+    //}
+
+    console.log(agree)
+});
+</script>

@@ -6,8 +6,6 @@ public class ViewModel
 {
     public Users User { get; set; }
 
-    public FirstAnswer FirstPartAnswers { get; set; }
-
     public PaginatedList<FirstQuiz> FirstPart { get; set; }
 
     public PaginatedList<SecondQuiz> SecondPart { get; set; }

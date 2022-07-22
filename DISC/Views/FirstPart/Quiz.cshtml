@@ -82,11 +82,50 @@
     @{
         if (Model.FirstPart.HasNextPage)
         {
-            <a asp-area="" asp-controller="FirstPart" asp-action="Quiz" asp-route-page="@(Model.FirstPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage">Далее</a>
+            <a asp-area="" asp-controller="FirstPart" asp-action="Quiz" asp-route-page="@(Model.FirstPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage" id="next">Далее</a>
         }
         else
         {
-            <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-id="@Model.User.Id" class="btn btn-outline-danger">2 Часть</a>
+            <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-id="@Model.User.Id" class="btn btn-outline-danger" id="next">2 Часть</a>
         }
     }
+    <p class="text-danger output"></p>
 </div>
+
+<script>
+const output = document.querySelector(".output");
+const radioButtonsMin = document.querySelectorAll('input[name="min"]');
+const radioButtonsMax = document.querySelectorAll('input[name="max"]');
+const btn = document.querySelector("#next");
+btn.addEventListener("click", (e) => {
+    let min;
+    let max;
+    for (const m of radioButtonsMin) {
+        if (m.checked) {
+            min = m.value;
+            break;
+        }
+    }
+    for (const m of radioButtonsMax) {
+        if (m.checked) {
+            max = m.value;
+            break;
+        }
+    }
+    
+    if (min === undefined) {
+        output.innerText = `Необходимо выбрать варианты ответа`;
+        e.preventDefault();
+    }
+
+    if (max === undefined) {
+        output.innerText = `Необходимо выбрать варианты ответа`;
+        e.preventDefault();
+    }
+
+    if (min === max) {
+        output.innerText = `Выберете два разные варианта`;
+        e.preventDefault();
+    }
+});
+</script>
