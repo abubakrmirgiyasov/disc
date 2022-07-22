@@ -142,11 +142,11 @@
     @{
         if (Model.SecondPart.HasNextPage)
         {
-                                        <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-page="@(Model.SecondPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage" id="next">Далее</a>
+            <a asp-area="" asp-controller="SecondPart" asp-action="Quiz" asp-route-page="@(Model.SecondPart.PageIndex + 1)" class="btn btn-outline-danger @nextPage" id="next">Далее</a>
         }
         else
         {
-                                        <a asp-area="" asp-controller="Report" asp-action="Compose" class="btn btn-success">Составить отчет</a>
+            <a asp-area="" asp-controller="Report" asp-action="Compose" class="btn btn-success">Составить отчет</a>
         }
     }
     <p class="text-danger output"></p>
@@ -156,28 +156,17 @@ const output = document.querySelector(".output");
 const radioButtons = document.querySelectorAll('input[type="radio"]');
 const btn = document.querySelector("#next");
 btn.addEventListener("click", (e) => { 
-    e.preventDefault();
-    let agree;
-    let disagree;
-    let dontKnow;
+    let i = 0;
     for (const m of radioButtons) {
-        if (m.checked && m.value === "Согласен") {
-            agree = m.value;
-            break;
-        }
-        if (m.checked && m.value === "Не согласен") {
-            disagree = m.value;
-            break;
-        }
-        if (m.checked && m.value === "Не знаю") {
-            dontKnow = m.value;
+        if (m.checked) {
+            i++;
+            
         }
     }
 
-    //if (agree === disagree === dontKnow) {
-    //    e.preventDefault();
-    //}
-
-    console.log(agree)
+    if (i !== 7) {
+        output.innerText = `Выберете все варианты.`;
+        e.preventDefault();
+    }
 });
 </script>
